@@ -3,10 +3,10 @@ import numbers
 import sys
 
 
-def simple_distance(x1:float, y1:float, x2:float, y2:float):
+def simple_distance(x1: float, y1: float, x2: float, y2: float):
     delta_x = x1-x2
     delta_y = y1-y2
-    return math.sqrt(delta_x**2 + delta_y*2) # oops I made a mistake
+    return math.sqrt(delta_x**2 + delta_y**2)  # oops I made a mistake
 
 
 def add_interest(principle, rate):
@@ -34,7 +34,7 @@ def show_output(initial_bal, rate):
     print(f"Your new balance is ${balance}")
 
 
-def testable_show_output(initial_bal, rate, outfile):
+def testable_show_output(initial_bal, rate, outfile=None):
     balance = add_interest(initial_bal, rate)
     if not outfile:
         outfile = sys.stdout
